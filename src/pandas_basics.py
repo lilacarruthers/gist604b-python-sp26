@@ -13,7 +13,6 @@ Use the notebooks to learn and test each function.
 """
 
 import pandas as pd
-from pathlib import Path
 import os
 
 
@@ -351,7 +350,7 @@ def join_station_data(stations_df, readings_df):
         return pd.DataFrame()
     
     # Print input summary
-    print(f"Input data:")
+    print("Input data:")
     print(f"  Readings: {len(readings_df)} rows, {len(readings_df.columns)} columns")
     print(f"  Stations: {len(stations_df)} rows, {len(stations_df.columns)} columns")
     
@@ -359,7 +358,7 @@ def join_station_data(stations_df, readings_df):
     readings_stations = set(readings_df['station_id'].unique())
     metadata_stations = set(stations_df['station_id'].unique())
     
-    print(f"\nJoin analysis:")
+    print("\nJoin analysis:")
     print(f"  Stations in readings: {len(readings_stations)}")
     print(f"  Stations in metadata: {len(metadata_stations)}")
     print(f"  Stations in both: {len(readings_stations & metadata_stations)}")
@@ -370,14 +369,14 @@ def join_station_data(stations_df, readings_df):
         print(f"  ℹ️ Metadata without readings: {metadata_stations - readings_stations}")
     
     # Perform left join to keep all readings
-    print(f"\nPerforming LEFT JOIN (keeping all readings)...")
+    print("\nPerforming LEFT JOIN (keeping all readings)...")
     result = pd.merge(readings_df, stations_df, on='station_id', how='left')
     
     # Validate results
     missing_metadata_count = result['station_name'].isna().sum()
     complete_records = len(result) - missing_metadata_count
     
-    print(f"\nJoin results:")
+    print("\nJoin results:")
     print(f"  Total records: {len(result)}")
     print(f"  Complete records: {complete_records}")
     print(f"  Records with missing metadata: {missing_metadata_count}")
