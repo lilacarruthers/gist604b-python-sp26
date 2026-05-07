@@ -1,6 +1,24 @@
-# GIST 604B – Python for GIS
+# Python GIS and Containerization
 
-Repository for working with tabular, vector, and raster GIS data using Python.
+**Student:** Lila Carruthers  
+**Course:** GIST 604B – Open Source GIS  
+**Module:** Module 3: Python GIS & Containerization 
+**University of Arizona**  
+
+## Project Description
+This project was my introduction to GeoPandas and Rasterio.
+
+## Tools and Technologies
+- GeoPandas
+- Pandas
+- Rasterio
+
+## What I Did
+I used the tools listed above to load, clean, and manipulate tabular, vector,
+and raster GIS data in Python.
+
+## How to View / Run
+Any of the python files or notebooks can be run in GitHub Codespaces. 
 
 ## Repository Structure
 
@@ -26,10 +44,3 @@ Repository for working with tabular, vector, and raster GIS data using Python.
     │   └── test_geopandas_basics.py
     ├── pyproject.toml
     └── uv.lock
-
-## Notes
-
-- Notebooks are for exploration and learning.
-- Final implementations are in `src/`.
-- Tests validate pandas and GeoPandas functionality.
-- Rasterio work is completed entirely in the notebook.
